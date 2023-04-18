@@ -9,3 +9,8 @@ const con = mongoose.connection;
 con.on("open", function () {
   console.log("connected");
 });
+const alienRouter = require("./routers/aliens");
+app.use("/aliens", alienRouter);
+app.listen(9000, () => {
+  console.log("Server started on port 9000");
+});
