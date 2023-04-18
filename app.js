@@ -9,6 +9,7 @@ const con = mongoose.connection;
 con.on("open", function () {
   console.log("connected");
 });
+app.use(express.json());
 const alienRouter = require("./routers/aliens");
 app.use("/aliens", alienRouter);
 app.listen(9000, () => {
